@@ -2829,12 +2829,12 @@ blockquote .primary-dots {
     width: 70px;
     height: 70px;
     line-height: 70px;
-    border: 7px double #3d434f;
+    border: 7px double #fff;
     margin: 0 0 20px 0px; }
     .info-box--style2 .info-box-thumb .woox-icon {
       width: 40px;
       height: 40px;
-      fill: #3d434f; }
+      fill: #e100f8; }
   .info-box--style2 .info-box-content {
     position: relative;
     z-index: 5; }
@@ -2843,13 +2843,13 @@ blockquote .primary-dots {
   .info-box--style2 .info-box-text {
     max-width: none; }
   .info-box--style2:hover .info-box-thumb {
-    border-color: #e100f8;
+    border-color: #fff;
     width: 70px;
     height: 70px;
     line-height: 70px;
     margin: 0 0 20px 0; }
     .info-box--style2:hover .info-box-thumb .woox-icon {
-      fill: #e100f8;
+      fill: #fff;
       width: 46px;
       height: 46px; }
   .info-box--style2:hover .info-box-title {
