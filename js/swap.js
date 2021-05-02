@@ -22,9 +22,7 @@ $(document).ready(function() {
 		await ethereum.request( {method: 'eth_requestAccounts'} )
 		ethereum.request({ method: 'eth_accounts' }).then(function (result) {
 			userAddr = result[0]
-			$('.user-address')[0].innerHTML = 'Your Address: ' + userAddr
-			$('.user-address')[0].style.display = ''
-			$('.connect-button')[0].innerHTML = 'Connected!'
+			$('.connect-button')[0].innerHTML = 'Connected'
 			web3 = new Web3(window.web3.currentProvider)
 		})
 		if(userAddr != undefined)
@@ -55,9 +53,11 @@ async function userLoginAttempt(){
 	await ethereum.request({method: 'eth_requestAccounts'})
 	ethereum.request({ method: 'eth_accounts' }).then(function (result) {
 		userAddr = result[0]
+        
 		$('.user-address')[0].innerHTML = 'Your Address: ' + userAddr
 		$('.user-address')[0].style.display = ''
-		$('.connect-button')[0].innerHTML = 'Connected!'
+
+		$('.connect-button')[0].innerHTML = 'Connected'
 		web3 = new Web3(window.web3.currentProvider)
 		initContract()
 	})
@@ -96,9 +96,11 @@ async function getSwapData(){
 }
 
 function displayThem(){
-	$('.displayThem')[0].innerHTML = ''
-	for(let i = 0; i < swapData.length; i++)
-		$('.displayThem')[0].innerHTML += '<tr><td>Addr: '+swapData[i].user+'</td><td>Amt: ' +swapData[i].amount+ '</td></tr>'
+	$('.displayThem')[0].innerHTML = '<thead><tr><th>Wallet Address</th><th>Cap</th></tr></thead>'
+	for(let i = 0; i < swapData.length; i++){   
+		$('.displayThem')[0].innerHTML += '<tr><td>'+i + ') - ' +swapData[i].user+'</td><td>' +((swapData[i].amount)/1e8).toFixed(2)+ ' DEFY </td></tr>'
+    }
+    
 }
 
 async function addWhitelistAddys(){
